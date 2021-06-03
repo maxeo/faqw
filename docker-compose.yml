@@ -1,0 +1,22 @@
+version: '2'
+services:
+  webserver:
+    ports:
+      - "80:80"
+      - "443:443"
+    build:
+      context: ./
+      dockerfile: dockerconfig/Dockerfile
+    volumes:
+      - ./project:/var/www/html
+      - ./dockerconfig/apache2/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./dockerconfig/run.sh:/run.sh
+      - ./dockerconfig/cert:/dockerconfig/cert
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+  db:
+    image: mariadb
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: maria_root_db_dev

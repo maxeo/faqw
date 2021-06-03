@@ -1,0 +1,22 @@
+.idea
+mariadb
+
+###> symfony/framework-bundle ###
+project/.env.local
+project/.env.local.php
+project/.env.*.local
+project/config/secrets/prod/prod.decrypt.private.php
+project/public/bundles/
+project/var
+project/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+project/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> phpunit/phpunit ###
+project/public/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
